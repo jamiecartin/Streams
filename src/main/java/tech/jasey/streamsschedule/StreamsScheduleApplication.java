@@ -10,4 +10,5 @@ public class StreamsScheduleApplication {
         SpringApplication.run(StreamsScheduleApplication.class, args);
     }
 
+
 }
