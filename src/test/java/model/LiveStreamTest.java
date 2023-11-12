@@ -1,6 +1,7 @@
 package model;
 
 import org.junit.jupiter.api.Test;
+import tech.jasey.streamsschedule.model.ImmutableLiveStream;
 import tech.jasey.streamsschedule.model.MutableLiveStream;
 
 import java.time.LocalDateTime;
@@ -20,6 +21,20 @@ public class LiveStreamTest {
         stream.setUrl("https://www.twitch.tv/jaseys");
         stream.setStartDate(LocalDateTime.of(2023, 11, 11, 10, 30));
         stream.setEndDate(LocalDateTime.of(2023, 11, 11, 12, 30));
+
+        assertNotNull(stream);
+        assertEquals("Building REST APIs with Spring Boot", stream.getTitle());
+    }
+
+    @Test
+    void create_new_immutable_live_stream() {
+        ImmutableLiveStream stream = new ImmutableLiveStream(
+                UUID.randomUUID().toString(),
+                "Building REST APIs with Spring Boot",
+                "Spring boot is a great option when building REST APIs.",
+                "https://www.twitch.tv/jaseys",
+                LocalDateTime.of(2023, 11, 11, 11, 30),
+                LocalDateTime.of(2023, 11, 11, 12, 30));
 
         assertNotNull(stream);
         assertEquals("Building REST APIs with Spring Boot", stream.getTitle());
