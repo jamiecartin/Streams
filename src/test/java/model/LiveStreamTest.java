@@ -26,6 +26,7 @@ public class LiveStreamTest {
         assertEquals("Building REST APIs with Spring Boot", stream.getTitle());
     }
 
+
     @Test
     void create_new_immutable_live_stream() {
         ImmutableLiveStream stream = new ImmutableLiveStream(
