@@ -1,4 +1,4 @@
-package tech.jasey.streamsschedule.model;
+package model;
 
 import java.time.LocalDateTime;
 

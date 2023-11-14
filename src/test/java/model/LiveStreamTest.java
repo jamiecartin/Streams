@@ -1,9 +1,6 @@
 package model;
 
 import org.junit.jupiter.api.Test;
-import tech.jasey.streamsschedule.model.ImmutableLiveStream;
-import tech.jasey.streamsschedule.model.LiveStream;
-import tech.jasey.streamsschedule.model.MutableLiveStream;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
