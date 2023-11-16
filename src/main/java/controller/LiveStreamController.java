@@ -1,10 +1,8 @@
 package controller;
 
 import model.LiveStream;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import repository.LiveStreamRepository;
 
 import java.util.List;
@@ -31,4 +29,24 @@ public class LiveStreamController {
         return repository.findById(id);
     }
 
+    // POST http://localhost:8080/streams
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+    public LiveStream create(@RequestBody LiveStream stream) {
+        return repository.create(stream);
+    }
+
+    // PUT http://localhost:8080/streams
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/{id}")
+    public LiveStream update(@RequestBody LiveStream stream, @PathVariable String id) {
+        return repository.update(stream, id);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
+        repository.delete(id);
+    }
 }

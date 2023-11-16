@@ -1,7 +1,6 @@
 package repository;
 
 import model.LiveStream;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -40,7 +39,7 @@ public class LiveStreamRepository {
         return stream;
     }
 
-    public LiveStream update(LiveStream stream) {
+    public LiveStream update(LiveStream stream, String id) {
         LiveStream existingStream = findById(stream.id());
         if (existingStream == null) {
             return null;
